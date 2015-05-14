@@ -13,7 +13,7 @@ module.exports = function(grunt) {
       }
     }, 
     jshint: {
-      files: ['Gruntfile.js', 'js/*.js'],
+      files: ['Gruntfile.js', 'js/main.js'],
       options: {
         globals: {
           jQuery: true,
@@ -25,16 +25,23 @@ module.exports = function(grunt) {
       dist: {
         options: {
           style: 'expanded'
+        },
+        files: {
+          'css/main.css': 'sass/main.scss'
         }
-      },
-      files: {
-        'css/main.css': 'sass/main.scss'
+      }
+    },
+    autoprefixer: {
+      dist: {
+        files: {
+          'css/main.css': 'css/main.css'
+        }
       }
     },
     watch: {
       css: {
         files: 'sass/*.scss',
-        tasks: ['sass'],
+        tasks: ['sass', 'autoprefixer'],
         options: {
           livereload:true,
         }
@@ -56,6 +63,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-autoprefixer');
 
   // Default task(s).
   grunt.registerTask('default', ['uglify', 'watch']);

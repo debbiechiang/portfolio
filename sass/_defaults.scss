@@ -1,0 +1,191 @@
+//colors
+$black: #000;
+$mediumGrey: #999;
+$darkGrey: #222;
+$periwinkle: #b3d4fc;
+$lightGrey: #ccc;
+
+//@extend-elements
+//original selectors
+//.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus
+%extend_1 {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+html {
+  color: $darkGrey;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+::-moz-selection {
+  background: $periwinkle;
+  //Instead of the line below you could use @includetext-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  text-shadow: none;
+}
+::selection {
+  background: $periwinkle;
+  //Instead of the line below you could use @includetext-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  text-shadow: none;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid $lightGrey;
+  margin: 1em 0;
+  padding: 0;
+}
+audio {
+  vertical-align: middle;
+}
+canvas {
+  vertical-align: middle;
+}
+iframe {
+  vertical-align: middle;
+}
+img {
+  vertical-align: middle;
+}
+svg {
+  vertical-align: middle;
+}
+video {
+  vertical-align: middle;
+}
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+textarea {
+  resize: vertical;
+}
+.browserupgrade {
+  margin: 0.2em 0;
+  background: $lightGrey;
+  color: $black;
+  padding: 0.2em 0;
+}
+.hidden {
+  display: none !important;
+}
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  &.focusable {
+    &:active {
+      @extend %extend_1;
+    }
+    &:focus {
+      @extend %extend_1;
+    }
+  }
+}
+.invisible {
+  visibility: hidden;
+}
+.clearfix {
+  &:before {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+
+@media only screen and(min-width: 35em) {
+}
+@media print,(-webkit-min-device-pixel-ratio: 1.25),(min-resolution: 1.25dppx),(min-resolution: 120dpi) {
+}
+@media print {
+  * {
+    background: transparent !important;
+    color: $black !important;
+    //Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    box-shadow: none !important;
+    //Instead of the line below you could use @includetext-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+    text-shadow: none !important;
+    &:before {
+      background: transparent !important;
+      color: $black !important;
+      //Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: none !important;
+      //Instead of the line below you could use @includetext-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      text-shadow: none !important;
+    }
+    &:after {
+      background: transparent !important;
+      color: $black !important;
+      //Instead of the line below you could use @includebox-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      box-shadow: none !important;
+      //Instead of the line below you could use @includetext-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+      text-shadow: none !important;
+    }
+  }
+  a {
+    text-decoration: underline;
+    &:visited {
+      text-decoration: underline;
+    }
+  }
+  pre {
+    border: 1px solid $mediumGrey;
+    page-break-inside: avoid;
+  }
+  blockquote {
+    border: 1px solid $mediumGrey;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr {
+    page-break-inside: avoid;
+  }
+  img {
+    page-break-inside: avoid;
+    max-width: 100% !important;
+  }
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+  h2 {
+    orphans: 3;
+    widows: 3;
+    page-break-after: avoid;
+  }
+  h3 {
+    orphans: 3;
+    widows: 3;
+    page-break-after: avoid;
+  }
+  a[href]:after {
+    content: "(" attr(href) ")";
+  }
+  abbr[title]:after {
+    content: "(" attr(title) ")";
+  }
+  a[href^="#"]:after {
+    content: "";
+  }
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+}
