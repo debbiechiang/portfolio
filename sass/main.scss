@@ -11,6 +11,10 @@ html, body, #scroller, #scroller section{
   top: 50%;
   transform: translateY(-50%);
   a{
+    display: block;
+    position: relative;
+    color: transparent;
+    height: 50px;
     &:after{
       content: '';
       position: absolute;
@@ -38,17 +42,17 @@ html, body, #scroller, #scroller section{
 }
 
 #section1{
-  background: #f00;
+  background: $lightGrey;
 }
 
 #section2{
-  background: #0f0;
+  background: $mediumGrey;
 }
 
 #section3{
-  background: #00f;
+  background: #fff;
 }
 
 #section4{
-  background: #fff;
+  background: $periwinkle;
 }

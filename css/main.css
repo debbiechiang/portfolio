@@ -198,6 +198,12 @@ html, body, #scroller, #scroller section {
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
 }
+#scroller nav a {
+  display: block;
+  position: relative;
+  color: transparent;
+  height: 50px;
+}
 #scroller nav a:after {
   content: '';
   position: absolute;
@@ -223,17 +229,17 @@ html, body, #scroller, #scroller section {
 }
 
 #section1 {
-  background: #f00;
+  background: #ccc;
 }
 
 #section2 {
-  background: #0f0;
+  background: #999;
 }
 
 #section3 {
-  background: #00f;
+  background: #fff;
 }
 
 #section4 {
-  background: #fff;
+  background: #b3d4fc;
 }
