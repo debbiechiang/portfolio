@@ -1,9 +1,21 @@
 @import "defaults";
 
+* {
+  box-sizing: border-box; 
+}
 html, body, #scroller, #scroller section{
   height: 100%;
+  font-family: "Raleway", Verdana, sans-serif;
 }
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+  &:first-child{
+    margin-top: 0;
+  }
+}
+h1 {
 
+}
 #scroller nav{
   position: fixed;
   z-index: 9999;
@@ -41,8 +53,26 @@ html, body, #scroller, #scroller section{
   height: 800px;
 }
 
-#section1{
+#section1 {
   background: $lightGrey;
+  h1{ 
+    font-weight: 800;
+  }
+  h2 {
+    font-weight: 400;
+  }
+  h3 {
+    font-weight: 200;
+  }
+  .social {
+    text-align: center;
+  }
+  .socialIcon{
+    display: inline-block;
+    height: 48px;
+    width: 48px;
+    text-indent: -9999px;
+  }
 }
 
 #section2{

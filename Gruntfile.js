@@ -7,6 +7,10 @@ module.exports = function(grunt) {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
+      pkg: {
+        src: ['js/vendor/*.js'],
+        dest: 'js/plugins.js'
+      },
       build: {
         src: ['js/plugins.js', 'js/main.js'],
         dest: 'js/scripts.min.js'
@@ -32,7 +36,7 @@ module.exports = function(grunt) {
       }
     },
     autoprefixer: {
-      dist: {
+      dist: { 
         files: {
           'css/main.css': 'css/main.css'
         }
