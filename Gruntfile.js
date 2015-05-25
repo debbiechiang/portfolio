@@ -8,12 +8,16 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
       },
       pkg: {
-        src: ['js/vendor/*.js'],
+        src: ['js/vendor/jqueryy.debouncedresize.js', 'js/vendor/jquery.easing.js', 'js/vendor/waypoints.min.js', 'js/vendor/trianglify.min.js'],
         dest: 'js/plugins.js'
       },
       build: {
         src: ['js/plugins.js', 'js/main.js'],
-        dest: 'js/scripts.min.js'
+        dest: 'js/scripts.min.js', 
+        options: {
+          beautify: true,
+          compress: false
+        }
       }
     }, 
     jshint: {
@@ -43,22 +47,19 @@ module.exports = function(grunt) {
       }
     },
     watch: {
+      options: {
+        livereload: 1335
+      },
       css: {
         files: 'sass/*.scss',
-        tasks: ['sass', 'autoprefixer'],
-        options: {
-          livereload:true,
-        }
+        tasks: ['sass', 'autoprefixer']
       },
       html: {
-        files: 'index.html',
-        options: {
-          livereload: true
-        }
+        files: 'index.html'
       },
       js: {
         files: ['<%= jshint.files %>'],
-        tasks: ['jshint']
+        tasks: ['jshint', 'uglify']
       }
     }
   });
@@ -70,6 +71,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-autoprefixer');
 
   // Default task(s).
-  grunt.registerTask('default', ['uglify', 'watch']);
+  grunt.registerTask('default', ['uglify:build', 'watch']);
 
 };

@@ -189,22 +189,50 @@ textarea {
   box-sizing: border-box;
 }
 
-html, body, #scroller, #scroller section {
+html, body, #scroller, section {
   height: 100%;
   font-family: "Raleway", Verdana, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  text-align: center;
+body {
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
-h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
-  margin-top: 0;
+
+h1 {
+  font-weight: 700;
+  font-family: 'Bitter','Garamond', 'Times New Roman', serif;
+}
+
+h2 {
+  margin-top: -.7em;
+  font-weight: 600;
+}
+
+section p {
+  font-weight: 300;
+}
+
+a {
+  font-family: "Bitter", "Garamond", serif;
+  text-decoration: none;
+  font-weight: 600;
+  color: #222;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  margin-right: 100px;
 }
 
 #scroller nav {
   position: fixed;
   z-index: 9999;
-  right: 100px;
+  right: 63px;
   top: 50%;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
@@ -230,30 +258,39 @@ h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, 
 #scroller nav a.current:after {
   background: #fff;
 }
+#scroller nav a.flip:after {
+  border: 4px solid #ccb7c0;
+}
+#scroller nav a.flip:hover:after {
+  background: rgba(204, 183, 192, 0.6);
+}
+#scroller nav a.current.flip:after {
+  background: #ccb7c0;
+}
 
 #scroller section {
-  position: relative;
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  height: 800px;
+  position: relative;
+  min-height: 600px;
+  padding: 3em 0 3em 3em;
 }
 
 #section1 {
-  background: #ccc;
+  background-color: #74a9cf;
+  color: #fff;
 }
 #section1 h1 {
-  font-weight: 800;
+  margin: 0;
+  font-size: 4.5em;
 }
-#section1 h2 {
-  font-weight: 400;
-}
-#section1 h3 {
-  font-weight: 200;
+#section1 p {
+  font-size: 1.1em;
 }
 #section1 .social {
-  text-align: center;
+  margin-left: -10px;
 }
 #section1 .socialIcon {
   display: inline-block;
@@ -263,11 +300,84 @@ h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, 
 }
 
 #section2 {
-  background: #999;
+  color: #222;
+  height: auto;
+}
+#section2 h1 {
+  margin: 0;
+  font-size: 3em;
+}
+#section2 h2 {
+  margin: 0;
+  font-size: 1.25em;
+}
+#section2 p {
+  margin-bottom: 0;
+  font-size: .9em;
+}
+#section2 .work {
+  margin: 2.5em 0;
+}
+#section2 .libs {
+  margin: 0;
+}
+#section2 .tag {
+  padding: 3px 5px;
+  font-size: .9em;
+  font-weight: 600;
+  background: #f3ede9;
+}
+#section2 .tag:hover {
+  background: #ccb7c0;
+  color: #fff;
+}
+#section2 .gallery {
+  margin: 15px auto;
+  padding: 15px;
+  width: 100%;
+  height: 420px;
+  border: 1px solid #ccc;
+  display: block;
+}
+#section2 .screenshot {
+  opacity: .8;
+}
+#section2 .screenshot:hover {
+  opacity: 1;
+}
+#section2 #heyitsthem {
+  background: url("../img/heyitsthem.jpg") center center no-repeat;
+  height: 100%;
+  background-size: contain;
+}
+#section2 #charitywarriors {
+  background: url("../img/charitywarriors.jpg") center center no-repeat;
+  height: 100%;
+  background-size: contain;
+}
+#section2 #mackenzie {
+  background: url("../img/mackenzie.jpg") center center no-repeat;
+  height: 100%;
+  background-size: contain;
+}
+#section2 #bk {
+  background: url("../img/bk.jpg") center center no-repeat;
+  height: 100%;
+  background-size: contain;
+}
+#section2 #hospira {
+  background: url("../img/hospira.jpg") center center no-repeat;
+  height: 100%;
+  background-size: contain;
+}
+#section2 #lonza {
+  background: url("../img/lonza.jpg") center center no-repeat;
+  height: 100%;
+  background-size: contain;
 }
 
 #section3 {
-  background: #fff;
+  background: #b3d4fc;
 }
 
 #section4 {
