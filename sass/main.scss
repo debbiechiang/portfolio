@@ -10,16 +10,25 @@
   height: 100%;
   background-size: contain;
 }
+@mixin clip-text($img-url, $fallback-color: #000) {
+  color: $fallback-color;
+  -webkit-text-fill-color: transparent;
+  background: -webkit-linear-gradient(transparent, transparent),
+              url($img-url) repeat;
+  background: -o-linear-gradient(transparent, transparent);
+  -webkit-background-clip: text;
+}
 
 * {
   box-sizing: border-box; 
 }
 html, body, #scroller, section{
-  height: 100%;
+  // height: 100%;
   font-family: "Raleway", Verdana, sans-serif;
 }
 body {
   @include fixed-bg;
+  font-size: 14px;
 }
 h1{ 
   font-weight: 700;
@@ -32,10 +41,13 @@ h2{
 section {
     p {
       font-weight: 300;
+      a {
+        font-family: "Bitter", "Garamond", serif;
+      }
     }
 }
 a {
-  font-family: "Bitter", "Garamond", serif;
+  
   text-decoration: none;
   font-weight: 600;
   color: $darkGrey;
@@ -45,13 +57,13 @@ a {
 }
 
 .content {
-  margin-right: 100px;
+  margin-right: 60px;
 }
 
 #scroller nav{
   position: fixed;
   z-index: 9999;
-  right: 63px;
+  right: 45px;
   top: 50%;
   transform: translateY(-50%);
   a{
@@ -74,13 +86,13 @@ a {
       background: #fff;
     }
     &.flip:after{
-      border: 4px solid $mauve;
+      border: 4px solid $lightGrey;
     }
     &.flip:hover:after{
-      background: rgba($mauve,0.6);
+      background: rgba($lightGrey,0.6);
     }
     &.current.flip:after{
-      background: $mauve;
+      background: $lightGrey;
     }
   }
 } 
@@ -88,8 +100,7 @@ a {
 #scroller section {
   @include fixed-bg;
   position: relative;
-  min-height: 600px;
-  padding: 3em 0 3em 3em;
+  padding: 1em 0 1em 1em;
 }
 
 #section1 { 
@@ -97,18 +108,24 @@ a {
   color: #fff;
   h1{ 
     margin: 0;
-    font-size: 4.5em;
+    font-size: 2.9em;
+  }
+  h2 {
+    margin-top: -.6em;
+    font-size: 1.2em;
   }
   p {
-    font-size: 1.1em;
+
   }
   .social {
-    margin-left: -10px;
+    margin-left: -1em;
+    width: calc(100% + 1em);
   }
   .socialIcon{
     display: inline-block;
     height: 48px;
-    width: 48px;
+    width: 24.1%;
+    background-position: 50%;
     text-indent: -9999px;
   }
 }
@@ -119,6 +136,7 @@ a {
   h1 {
     margin: 0;
     font-size: 3em;
+    @include clip-text("../img/bg.png", $blue);
   }
   h2 {
     margin: 0;
@@ -126,7 +144,6 @@ a {
   }
   p {
     margin-bottom: 0;
-    font-size: .9em;
   }
   .work {
     margin: 2.5em 0;
@@ -148,6 +165,7 @@ a {
     margin: 15px auto;
     padding: 15px;
     width: 100%;
+    background: #fff;
     height: 420px;
     border: 1px solid $lightGrey;
     display: block;
@@ -186,10 +204,59 @@ a {
 }
 
 #section3{
-  background: $periwinkle;
-
+  h1 {
+    color: $mediumGrey;
+    margin: 0;
+    font-size: 3em;
+  }
 }
 
-#section4{
-  background: $periwinkle;
+@media screen and (min-width: 321px) {
+  html, body, #scroller, section{
+    min-height: 100%;
+  }
+  #section1 {
+
+    .socialIcon {
+      width: 48px;
+    }
+  }
+}
+
+@media screen and (min-width: 569px){
+  html, body, #scroller, section{
+    height: 100%;
+  }
+
+  #scroller section {
+    padding: 3em 0 3em 3em;
+  }
+
+  #scroller nav {
+    right: 64px;
+  }
+  p {
+    font-size: 1.1em;
+  }
+  .content {
+    margin-right: 100px;
+  }
+  #section1 {
+    h1 {
+      font-size: 4.5em;
+    }
+    h2 {
+      margin-top: -.7em;
+      font-size: 1.5em;
+    }
+  }
+  #section3 {
+
+    h1 {
+
+      font-size: 4.5em;
+
+      color: $mauve
+    }
+  }
 }
