@@ -25,11 +25,11 @@ var fixScroll = (function(){
 			if( direction === 'down' ) { 
 				changeNav( $( this ) );
 			 }
-		}, { offset: '30%' } ).waypoint( function( direction ) {
+		}, { offset: '50%' } ).waypoint( function( direction ) {
 			if( direction === 'up' ) { 
 				changeNav( $( this ) ); 
 			}
-		}, { offset: '-30%' } );
+		}, { offset: '-50%' } );
 
 		// on window resize: the body is scrolled to the position of the current section
 		$( window ).on( 'debouncedresize', function() {
