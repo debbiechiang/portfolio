@@ -18,9 +18,9 @@ var fixScroll = (function(){
 
 		// 2 waypoints defined:
 		// First one when we scroll down: the current navigation link gets updated. 
-		// A `new section´ is reached when it occupies more than 70% of the viewport
+		// A `new section´ is reached when it occupies more than 50% of the viewport
 		// Second one when we scroll up: the current navigation link gets updated. 
-		// A `new section´ is reached when it occupies more than 70% of the viewport
+		// A `new section´ is reached when it occupies more than 50% of the viewport
 		config.$sections.waypoint( function( direction ) {
 			if( direction === 'down' ) { 
 				changeNav( $( this ) );

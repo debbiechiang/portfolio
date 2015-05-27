@@ -212,6 +212,7 @@ h2 {
 }
 
 section p {
+  font-size: 1.2em;
   font-weight: 300;
 }
 section p a {
@@ -227,47 +228,8 @@ a:hover {
   text-decoration: underline;
 }
 
-.content {
-  margin-right: 60px;
-}
-
 #scroller nav {
-  position: fixed;
-  z-index: 9999;
-  right: 45px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-#scroller nav a {
-  display: block;
-  position: relative;
-  color: transparent;
-  height: 50px;
-}
-#scroller nav a:after {
-  content: '';
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: 4px solid #fff;
-}
-#scroller nav a:hover:after {
-  background: rgba(255, 255, 255, 0.6);
-}
-#scroller nav a.current:after {
-  background: #fff;
-}
-#scroller nav a.flip:after {
-  border: 4px solid #ccc;
-}
-#scroller nav a.flip:hover:after {
-  background: rgba(204, 204, 204, 0.6);
-}
-#scroller nav a.current.flip:after {
-  background: #ccc;
+  display: none;
 }
 
 #scroller section {
@@ -276,7 +238,7 @@ a:hover {
   background-size: cover;
   background-attachment: fixed;
   position: relative;
-  padding: 2em 0 2em 1em;
+  padding: 2em 1em;
 }
 
 #section1 {
@@ -330,10 +292,12 @@ a:hover {
   margin: 0;
 }
 #section2 .tag {
-  padding: 3px 5px;
+  margin-bottom: 5px;
+  padding: 2px 5px;
   font-size: .9em;
   font-weight: 600;
   background: #f3ede9;
+  display: inline-block;
 }
 #section2 .tag:hover {
   background: #ccb7c0;
@@ -344,7 +308,7 @@ a:hover {
   padding: 15px;
   width: 100%;
   background: #fff;
-  height: 420px;
+  height: 360px;
   border: 1px solid #ccc;
   display: block;
 }
@@ -354,32 +318,38 @@ a:hover {
 #section2 .screenshot:hover {
   opacity: 1;
 }
-#section2 #heyitsthem {
-  background: url("../img/heyitsthem.jpg") center center no-repeat;
+
+#heyitsthem {
+  background: url("../img/heyitsthem-sm.jpg") center center no-repeat;
   height: 100%;
   background-size: contain;
 }
-#section2 #charitywarriors {
-  background: url("../img/charitywarriors.jpg") center center no-repeat;
+
+#charitywarriors {
+  background: url("../img/charitywarriors-sm.jpg") center center no-repeat;
   height: 100%;
   background-size: contain;
 }
-#section2 #mackenzie {
-  background: url("../img/mackenzie.jpg") center center no-repeat;
+
+#mackenzie {
+  background: url("../img/mackenzie-sm.jpg") center center no-repeat;
   height: 100%;
   background-size: contain;
 }
-#section2 #bk {
-  background: url("../img/bk.jpg") center center no-repeat;
+
+#bk {
+  background: url("../img/bk-sm.jpg") center center no-repeat;
   height: 100%;
   background-size: contain;
 }
-#section2 #hospira {
+
+#hospira {
   background: url("../img/hospira.jpg") center center no-repeat;
   height: 100%;
   background-size: contain;
 }
-#section2 #lonza {
+
+#lonza {
   background: url("../img/lonza.jpg") center center no-repeat;
   height: 100%;
   background-size: contain;
@@ -396,8 +366,91 @@ a:hover {
     min-height: 100%;
   }
 
+  #scroller nav {
+    display: block;
+    position: fixed;
+    z-index: 9999;
+    right: 45px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+  #scroller nav a {
+    display: block;
+    position: relative;
+    color: transparent;
+    height: 50px;
+  }
+  #scroller nav a:after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+  }
+  #scroller nav a:hover:after {
+    background: rgba(255, 255, 255, 0.6);
+  }
+  #scroller nav a.current:after {
+    background: #fff;
+  }
+  #scroller nav a.flip:before {
+    content: "";
+    position: absolute;
+    background: #383736;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: -1;
+    -webkit-transition: top 0.09s ease-in;
+  }
+  #scroller nav a.flip:after {
+    border: 4px solid #ccc;
+  }
+  #scroller nav a.flip:hover:after {
+    background: rgba(204, 204, 204, 0.6);
+  }
+  #scroller nav a.current.flip:after {
+    background: #ccc;
+  }
+
+  .content {
+    margin-right: 60px;
+  }
+
   #section1 .socialIcon {
     width: 48px;
+  }
+
+  #section2 .gallery {
+    height: 300px;
+  }
+
+  #heyitsthem {
+    background: url("../img/heyitsthem.jpg") center center no-repeat;
+    height: 100%;
+    background-size: contain;
+  }
+
+  #charitywarriors {
+    background: url("../img/charitywarriors.jpg") center center no-repeat;
+    height: 100%;
+    background-size: contain;
+  }
+
+  #mackenzie {
+    background: url("../img/mackenzie.jpg") center center no-repeat;
+    height: 100%;
+    background-size: contain;
+  }
+
+  #bk {
+    background: url("../img/bk.jpg") center center no-repeat;
+    height: 100%;
+    background-size: contain;
   }
 }
 @media screen and (min-width: 569px) {
@@ -414,7 +467,7 @@ a:hover {
   }
 
   p {
-    font-size: 1.1em;
+    font-size: 1.25em;
   }
 
   .content {
@@ -429,8 +482,11 @@ a:hover {
     font-size: 1.5em;
   }
 
+  #section2 .gallery {
+    height: 420px;
+  }
+
   #section3 h1 {
     font-size: 4.5em;
-    color: #ccb7c0;
   }
 }

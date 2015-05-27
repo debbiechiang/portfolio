@@ -40,6 +40,7 @@ h2{
 }
 section {
     p {
+      font-size: 1.2em;
       font-weight: 300;
       a {
         font-family: "Bitter", "Garamond", serif;
@@ -57,50 +58,17 @@ a {
 }
 
 .content {
-  margin-right: 60px;
+  // margin-right: 60px;
 }
 
-#scroller nav{
-  position: fixed;
-  z-index: 9999;
-  right: 45px;
-  top: 50%;
-  transform: translateY(-50%);
-  a{
-    display: block;
-    position: relative;
-    color: transparent;
-    height: 50px;
-    &:after{
-      content: '';
-      position: absolute;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      border: 4px solid #fff; 
-    }
-    &:hover:after{
-      background: rgba(255,255,255,0.6);
-    }
-    &.current:after{
-      background: #fff;
-    }
-    &.flip:after{
-      border: 4px solid $lightGrey;
-    }
-    &.flip:hover:after{
-      background: rgba($lightGrey,0.6);
-    }
-    &.current.flip:after{
-      background: $lightGrey;
-    }
-  }
-} 
+#scroller nav {
+  display: none;
+}
 
 #scroller section {
   @include fixed-bg;
   position: relative;
-  padding: 2em 0 2em 1em;
+  padding: 2em 1em;
 }
 
 #section1 { 
@@ -152,10 +120,12 @@ a {
     margin: 0;
   }
   .tag {
-    padding: 3px 5px;
+    margin-bottom: 5px;
+    padding: 2px 5px;
     font-size: .9em;
     font-weight: 600;
     background: #f3ede9;
+    display: inline-block;
     &:hover {
       background: #ccb7c0;
       color: #fff;
@@ -166,7 +136,7 @@ a {
     padding: 15px;
     width: 100%;
     background: #fff;
-    height: 420px;
+    height: 360px;
     border: 1px solid $lightGrey;
     display: block;
     // background: #fff;
@@ -176,6 +146,104 @@ a {
       &:hover {
         opacity: 1;
       }
+  }
+}
+#heyitsthem {
+  background: url('../img/heyitsthem-sm.jpg') center center no-repeat;
+  @include screenshot;
+}
+#charitywarriors {
+  background: url('../img/charitywarriors-sm.jpg') center center no-repeat;
+  @include screenshot; 
+}
+#mackenzie {
+  background: url('../img/mackenzie-sm.jpg') center center no-repeat;
+  @include screenshot; 
+}
+#bk {
+  background: url('../img/bk-sm.jpg') center center no-repeat;
+  @include screenshot; 
+}
+#hospira {
+  background: url('../img/hospira.jpg') center center no-repeat;
+  @include screenshot; 
+}
+#lonza {
+  background: url('../img/lonza.jpg') center center no-repeat;
+  @include screenshot; 
+}
+
+#section3{
+  h1 {
+    color: $mediumGrey;
+    margin: 0;
+    font-size: 3em;
+  }
+}
+
+@media screen and (min-width: 321px) {
+  html, body, #scroller, section{
+    min-height: 100%;
+  }
+  #scroller nav{
+    display: block;
+    position: fixed;
+    z-index: 9999;
+    right: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+    a{
+      display: block;
+      position: relative;
+      color: transparent;
+      height: 50px;
+      &:after{
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 4px solid #fff; 
+      }
+      &:hover:after{
+        background: rgba(255,255,255,0.6);
+      }
+      &.current:after{
+        background: #fff;
+      }
+      &.flip:before {
+        content: "";
+        position: absolute;
+        background: #383736;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 100%;
+        z-index: -1;
+        -webkit-transition: top 0.09s ease-in;
+      }
+      &.flip:after{
+        border: 4px solid $lightGrey;
+      }
+      &.flip:hover:after{
+        background: rgba($lightGrey,0.6);
+      }
+      &.current.flip:after{
+        background: $lightGrey;
+      }
+    }
+  } 
+  .content {
+    margin-right: 60px;
+  }
+
+  #section1 {
+    .socialIcon {
+      width: 48px;
+    }
+  }
+  #section2 .gallery {
+    height: 300px;
   }
   #heyitsthem {
     background: url('../img/heyitsthem.jpg') center center no-repeat;
@@ -193,34 +261,6 @@ a {
     background: url('../img/bk.jpg') center center no-repeat;
     @include screenshot; 
   }
-  #hospira {
-    background: url('../img/hospira.jpg') center center no-repeat;
-    @include screenshot; 
-  }
-  #lonza {
-    background: url('../img/lonza.jpg') center center no-repeat;
-    @include screenshot; 
-  }
-}
-
-#section3{
-  h1 {
-    color: $mediumGrey;
-    margin: 0;
-    font-size: 3em;
-  }
-}
-
-@media screen and (min-width: 321px) {
-  html, body, #scroller, section{
-    min-height: 100%;
-  }
-  #section1 {
-
-    .socialIcon {
-      width: 48px;
-    }
-  }
 }
 
 @media screen and (min-width: 569px){
@@ -236,11 +276,13 @@ a {
     right: 64px;
   }
   p {
-    font-size: 1.1em;
+    font-size: 1.25em;
   }
   .content {
     margin-right: 100px;
   }
+
+
   #section1 {
     h1 {
       font-size: 4.5em;
@@ -250,13 +292,15 @@ a {
       font-size: 1.5em;
     }
   }
-  #section3 {
-
-    h1 {
-
-      font-size: 4.5em;
-
-      color: $mauve
+  #section2 {
+    .gallery {
+      height: 420px;
     }
   }
+  #section3 {
+    h1 {
+      font-size: 4.5em;
+    }
+  }
+
 }
