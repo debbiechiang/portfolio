@@ -62,6 +62,18 @@ module.exports = function(grunt) {
         tasks: ['jshint', 'uglify']
       }
     }
+    // grunticon: {
+    //     myIcons: {
+    //         files: [{
+    //             expand: true,
+    //             cwd: 'svg',
+    //             src: ['*.svg', '*.png'],
+    //             dest: "example/output"
+    //         }],
+    //         options: {
+    //         }
+    //     }
+    // }
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -69,8 +81,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-autoprefixer');
+  // grunt.loadNpmTasks('grunt-grunticon');
 
   // Default task(s).
-  grunt.registerTask('default', ['uglify:build', 'watch']);
+  grunt.registerTask('default', ['uglify:build','watch']);
 
 };

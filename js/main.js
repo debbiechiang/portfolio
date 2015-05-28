@@ -70,9 +70,15 @@ var triangle = (function(){
 
 	function init(){
 		var bluepatt = Trianglify($.extend(opts, { x_colors: ["001645","#023858", "#045a8d", "#0570b0", "#3690c0", "#74a9cf", "#a6bddb", "#74a9cf", "#3690c0", "#0570b0", "#045a8d", "#023858","001645"] }));
-		var greypatt = Trianglify($.extend(opts, { x_colors: ["e7d0c0", "f3ede9", "faf9fb", "dcd2d7", "ccb7c0"] }));
-		$('#section1').css({'background-image': 'url(' + bluepatt.png() + ')'});
-		$('#section3').css({'background-image': 'url(' + greypatt.png() + ')'});
+		// var greypatt = Trianglify($.extend(opts, { x_colors: ["e7d0c0", "f3ede9", "faf9fb", "dcd2d7", "ccb7c0"] }));
+		var greypatt = Trianglify($.extend(opts, { 
+			x_colors: ["000000", "222222", "ffffff", "222222", "000000"], 
+			y_colors: ["333333", "999999", "000000"],
+			cell_size: 30 
+		}));
+		var orangepatt = Trianglify($.extend(opts, {x_colors:["#800026", "#bd0026", "#e31a1c", "#fc4e2a", "#fd8d3c", "#feb24c", "#fed976", "#ffeda0", "#ffffcc", "#ffffcc", "#ffeda0", "#fed976", "#feb24c", "#fd8d3c", "#fc4e2a", "#e31a1c", "#bd0026", "#800026"] }));
+		// $('#section3').css({'background-image': 'url(' + greypatt.png() + ')'});
+		// $('#section3').css({'background-image': 'url(' + greypatt.png() + ')'});
 	}
 
 	return {

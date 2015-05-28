@@ -1,24 +1,33 @@
 @import "defaults";
 
+// MIXINS
 @mixin fixed-bg {
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 }
+
 @mixin screenshot {
   height: 100%;
   background-size: contain;
 }
-@mixin clip-text($img-url, $fallback-color: #000) {
-  color: $fallback-color;
-  -webkit-text-fill-color: transparent;
-  background: -webkit-linear-gradient(transparent, transparent),
-              url($img-url) repeat;
-  background: -o-linear-gradient(transparent, transparent);
-  -webkit-background-clip: text;
+
+@mixin overlay($opacity) {
+  &:before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: rgba(#000, $opacity);
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: -1;
+  }
 }
 
+
+// GENERAL HTML ELEMENTS
 * {
   box-sizing: border-box; 
 }
@@ -29,37 +38,40 @@ html, body, #scroller, section{
 body {
   @include fixed-bg;
   font-size: 14px;
+  background-image: url("../img/bg-arch.jpg");
 }
 h1{ 
-  font-weight: 700;
-  font-family: 'Bitter','Garamond', 'Times New Roman', serif;
+  margin: 0;
+  font: 400 3.7em/1.4 "Fjalla One", "Arial", sans-serif;
+  text-transform: uppercase;
+  color: #fff;
 }
 h2{
   margin-top: -.7em;
-  font-weight: 600;
+  font-weight: 700;
+  font-family: "Bitter", "Garamond", "Times New Roman", serif;
 }
 section {
     p {
       font-size: 1.2em;
       font-weight: 300;
       a {
-        font-family: "Bitter", "Garamond", serif;
+        color: $orange;
+        font-family: "Bitter", "Garamond", "Times New Roman", serif;
       }
     }
 }
-a {
-  
+a {  
   text-decoration: none;
   font-weight: 600;
   color: $darkGrey;
   &:hover {
+    color: #fff;
     text-decoration: underline;
   }
 }
 
-.content {
-  // margin-right: 60px;
-}
+// PAGE SPECIFIC STYLING
 
 #scroller nav {
   display: none;
@@ -69,21 +81,20 @@ a {
   @include fixed-bg;
   position: relative;
   padding: 2em 1em;
+  z-index: 0;
 }
 
 #section1 { 
-  background-color: #74a9cf;
+  @include overlay(.725);
   color: #fff;
   h1{ 
-    margin: 0;
-    font-size: 2.9em;
+    margin: 0 0 0 -3px;
+    font-size: 3.7em;
+    text-shadow: 1px 2px 4px rgba($darkGrey, .8);
   }
   h2 {
-    margin-top: -.6em;
-    font-size: 1.2em;
-  }
-  p {
-
+    margin-top: -.7em;
+    font-size: 1.3em;
   }
   .social {
     margin-left: -1em;
@@ -100,18 +111,24 @@ a {
 
 #section2 {
   color: $darkGrey;
+  background: #fff;
   height: auto;
   h1 {
     margin: 0;
-    font-size: 3em;
-    @include clip-text("../img/bg.png", $blue);
+    // @include clip-text("../img/bg.png", $blue);
+    color: $darkGrey;
   }
   h2 {
-    margin: 0;
-    font-size: 1.25em;  
+    font-size: 1.5em;  
   }
   p {
     margin-bottom: 0;
+  }
+  a {
+    color: $orange;
+    &:hover {
+      color: $mediumGrey;
+    } 
   }
   .work {
     margin: 2.5em 0;
@@ -122,7 +139,7 @@ a {
   .tag {
     margin-bottom: 5px;
     padding: 2px 5px;
-    font-size: .9em;
+    font-size: .75em;
     font-weight: 600;
     background: #f3ede9;
     display: inline-block;
@@ -149,35 +166,36 @@ a {
   }
 }
 #heyitsthem {
-  background: url('../img/heyitsthem-sm.jpg') center center no-repeat;
+  background: url("../img/heyitsthem-sm.jpg") center center no-repeat;
   @include screenshot;
 }
 #charitywarriors {
-  background: url('../img/charitywarriors-sm.jpg') center center no-repeat;
+  background: url("../img/charitywarriors-sm.jpg") center center no-repeat;
   @include screenshot; 
 }
 #mackenzie {
-  background: url('../img/mackenzie-sm.jpg') center center no-repeat;
+  background: url("../img/mackenzie-sm.jpg") center center no-repeat;
   @include screenshot; 
 }
 #bk {
-  background: url('../img/bk-sm.jpg') center center no-repeat;
+  background: url("../img/bk-sm.jpg") center center no-repeat;
   @include screenshot; 
 }
 #hospira {
-  background: url('../img/hospira.jpg') center center no-repeat;
+  background: url("../img/hospira.jpg") center center no-repeat;
   @include screenshot; 
 }
 #lonza {
-  background: url('../img/lonza.jpg') center center no-repeat;
+  background: url("../img/lonza.jpg") center center no-repeat;
   @include screenshot; 
 }
 
 #section3{
+  @include overlay(.7);
+  color: #fff;
+  background: url("../img/bg-medallion.jpg") 0 0 no-repeat;
   h1 {
-    color: $mediumGrey;
-    margin: 0;
-    font-size: 3em;
+    color: #fff;
   }
 }
 
@@ -198,7 +216,7 @@ a {
       color: transparent;
       height: 50px;
       &:after{
-        content: '';
+        content: "";
         position: absolute;
         width: 24px;
         height: 24px;
@@ -246,19 +264,19 @@ a {
     height: 300px;
   }
   #heyitsthem {
-    background: url('../img/heyitsthem.jpg') center center no-repeat;
+    background: url("../img/heyitsthem.jpg") center center no-repeat;
     @include screenshot;
   }
   #charitywarriors {
-    background: url('../img/charitywarriors.jpg') center center no-repeat;
+    background: url("../img/charitywarriors.jpg") center center no-repeat;
     @include screenshot; 
   }
   #mackenzie {
-    background: url('../img/mackenzie.jpg') center center no-repeat;
+    background: url("../img/mackenzie.jpg") center center no-repeat;
     @include screenshot; 
   }
   #bk {
-    background: url('../img/bk.jpg') center center no-repeat;
+    background: url("../img/bk.jpg") center center no-repeat;
     @include screenshot; 
   }
 }
@@ -275,6 +293,9 @@ a {
   #scroller nav {
     right: 64px;
   }
+  h1 {
+    font-size: 5em;
+  }
   p {
     font-size: 1.25em;
   }
@@ -285,10 +306,11 @@ a {
 
   #section1 {
     h1 {
-      font-size: 4.5em;
+      font-size: 6em;
+      margin-left: -4px;
     }
     h2 {
-      margin-top: -.7em;
+      margin-top: -1em;
       font-size: 1.5em;
     }
   }
@@ -298,9 +320,7 @@ a {
     }
   }
   #section3 {
-    h1 {
-      font-size: 4.5em;
-    }
+
   }
 
 }

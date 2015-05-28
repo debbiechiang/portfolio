@@ -199,16 +199,20 @@ body {
   background-size: cover;
   background-attachment: fixed;
   font-size: 14px;
+  background-image: url("../img/bg-arch.jpg");
 }
 
 h1 {
-  font-weight: 700;
-  font-family: 'Bitter','Garamond', 'Times New Roman', serif;
+  margin: 0;
+  font: 400 3.7em/1.4 "Fjalla One", "Arial", sans-serif;
+  text-transform: uppercase;
+  color: #fff;
 }
 
 h2 {
   margin-top: -.7em;
-  font-weight: 600;
+  font-weight: 700;
+  font-family: "Bitter", "Garamond", "Times New Roman", serif;
 }
 
 section p {
@@ -216,7 +220,8 @@ section p {
   font-weight: 300;
 }
 section p a {
-  font-family: "Bitter", "Garamond", serif;
+  color: #fc4e2a;
+  font-family: "Bitter", "Garamond", "Times New Roman", serif;
 }
 
 a {
@@ -225,6 +230,7 @@ a {
   color: #222;
 }
 a:hover {
+  color: #fff;
   text-decoration: underline;
 }
 
@@ -239,19 +245,30 @@ a:hover {
   background-attachment: fixed;
   position: relative;
   padding: 2em 1em;
+  z-index: 0;
 }
 
 #section1 {
-  background-color: #74a9cf;
   color: #fff;
 }
+#section1:before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.725);
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+}
 #section1 h1 {
-  margin: 0;
-  font-size: 2.9em;
+  margin: 0 0 0 -3px;
+  font-size: 3.7em;
+  text-shadow: 1px 2px 4px rgba(34, 34, 34, 0.8);
 }
 #section1 h2 {
-  margin-top: -.6em;
-  font-size: 1.2em;
+  margin-top: -.7em;
+  font-size: 1.3em;
 }
 #section1 .social {
   margin-left: -1em;
@@ -267,23 +284,24 @@ a:hover {
 
 #section2 {
   color: #222;
+  background: #fff;
   height: auto;
 }
 #section2 h1 {
   margin: 0;
-  font-size: 3em;
-  color: #0570b0;
-  -webkit-text-fill-color: transparent;
-  background: -webkit-linear-gradient(transparent, transparent), url("../img/bg.png") repeat;
-  background: -o-linear-gradient(transparent, transparent);
-  -webkit-background-clip: text;
+  color: #222;
 }
 #section2 h2 {
-  margin: 0;
-  font-size: 1.25em;
+  font-size: 1.5em;
 }
 #section2 p {
   margin-bottom: 0;
+}
+#section2 a {
+  color: #fc4e2a;
+}
+#section2 a:hover {
+  color: #999;
 }
 #section2 .work {
   margin: 2.5em 0;
@@ -294,7 +312,7 @@ a:hover {
 #section2 .tag {
   margin-bottom: 5px;
   padding: 2px 5px;
-  font-size: .9em;
+  font-size: .75em;
   font-weight: 600;
   background: #f3ede9;
   display: inline-block;
@@ -355,10 +373,22 @@ a:hover {
   background-size: contain;
 }
 
+#section3 {
+  color: #fff;
+  background: url("../img/bg-medallion.jpg") 0 0 no-repeat;
+}
+#section3:before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+}
 #section3 h1 {
-  color: #999;
-  margin: 0;
-  font-size: 3em;
+  color: #fff;
 }
 
 @media screen and (min-width: 321px) {
@@ -383,7 +413,7 @@ a:hover {
     height: 50px;
   }
   #scroller nav a:after {
-    content: '';
+    content: "";
     position: absolute;
     width: 24px;
     height: 24px;
@@ -466,6 +496,10 @@ a:hover {
     right: 64px;
   }
 
+  h1 {
+    font-size: 5em;
+  }
+
   p {
     font-size: 1.25em;
   }
@@ -475,18 +509,15 @@ a:hover {
   }
 
   #section1 h1 {
-    font-size: 4.5em;
+    font-size: 6em;
+    margin-left: -4px;
   }
   #section1 h2 {
-    margin-top: -.7em;
+    margin-top: -1em;
     font-size: 1.5em;
   }
 
   #section2 .gallery {
     height: 420px;
-  }
-
-  #section3 h1 {
-    font-size: 4.5em;
   }
 }
