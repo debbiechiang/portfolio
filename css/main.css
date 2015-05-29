@@ -432,7 +432,7 @@ a:hover {
   }
 }
 @media screen and (min-width: 569px) {
-  html, body, #scroller, section {
+  .no-touch, .no-touch body, .no-touch #scroller, .no-touch section {
     height: 100%;
   }
 
