@@ -1,3 +1,13 @@
+// Code Organization
+// 1. IMPORTS
+// 2. MIXINS
+// 3. GENERAL ELEMENT STYLING
+// 4. PAGE SECTIONS
+// 5. GALLERY
+// 6. SVGS
+// 7. RESPONSIVE
+
+// IMPORTS
 @import "defaults";
 
 // MIXINS
@@ -89,8 +99,8 @@ a {
   color: #fff;
   h1{ 
     margin: 0 0 0 -3px;
-    font-size: 3.7em;
-    text-shadow: 1px 2px 4px rgba($darkGrey, .8);
+    color: $lightGrey;
+    text-shadow: 2px 2px 4px rgba($darkGrey, .8);
   }
   h2 {
     margin-top: -.7em;
@@ -99,11 +109,12 @@ a {
   .social {
     margin-left: -1em;
     width: calc(100% + 1em);
+    display: table;
   }
   .socialIcon{
-    display: inline-block;
+    display: table-cell;
     height: 48px;
-    width: 24.1%;
+    width: 20%;
     background-position: 50%;
     text-indent: -9999px;
   }
@@ -165,6 +176,20 @@ a {
       }
   }
 }
+
+#section3{
+  @include overlay(.7);
+  color: #fff;
+  background: url("../img/bg-medallion.jpg") 0 0 no-repeat;
+  h1 {
+    color: $lightGrey;
+    text-shadow: 2px 2px 4px rgba($darkGrey, .8);
+  }
+}
+
+
+// GALLERY
+
 #heyitsthem {
   background: url("../img/heyitsthem-sm.jpg") center center no-repeat;
   @include screenshot;
@@ -190,24 +215,53 @@ a {
   @include screenshot; 
 }
 
-#section3{
-  @include overlay(.7);
-  color: #fff;
-  background: url("../img/bg-medallion.jpg") 0 0 no-repeat;
-  h1 {
-    color: #fff;
-  }
+// SVG
+.icon-github #github{
+  height: 48px;
+  width: 48px;
 }
+
+// RESPONSIVE
 
 @media screen and (min-width: 321px) {
   html, body, #scroller, section{
     min-height: 100%;
   }
+  #section2 .gallery {
+    height: 300px;
+  }
+  #heyitsthem {
+    background: url("../img/heyitsthem.jpg") center center no-repeat;
+    @include screenshot;
+  }
+  #charitywarriors {
+    background: url("../img/charitywarriors.jpg") center center no-repeat;
+    @include screenshot; 
+  }
+  #mackenzie {
+    background: url("../img/mackenzie.jpg") center center no-repeat;
+    @include screenshot; 
+  }
+  #bk {
+    background: url("../img/bk.jpg") center center no-repeat;
+    @include screenshot; 
+  }
+}
+
+@media screen and (min-width: 569px){
+  html, body, #scroller, section{
+    height: 100%;
+  }
+
+  #scroller section {
+    padding: 3em 0 3em 3em;
+  }
+
   #scroller nav{
     display: block;
     position: fixed;
     z-index: 9999;
-    right: 45px;
+    right: 64px;
     top: 50%;
     transform: translateY(-50%);
     a{
@@ -252,57 +306,15 @@ a {
     }
   } 
   .content {
-    margin-right: 60px;
+    margin-right: 100px;
   }
 
-  #section1 {
-    .socialIcon {
-      width: 48px;
-    }
-  }
-  #section2 .gallery {
-    height: 300px;
-  }
-  #heyitsthem {
-    background: url("../img/heyitsthem.jpg") center center no-repeat;
-    @include screenshot;
-  }
-  #charitywarriors {
-    background: url("../img/charitywarriors.jpg") center center no-repeat;
-    @include screenshot; 
-  }
-  #mackenzie {
-    background: url("../img/mackenzie.jpg") center center no-repeat;
-    @include screenshot; 
-  }
-  #bk {
-    background: url("../img/bk.jpg") center center no-repeat;
-    @include screenshot; 
-  }
-}
-
-@media screen and (min-width: 569px){
-  html, body, #scroller, section{
-    height: 100%;
-  }
-
-  #scroller section {
-    padding: 3em 0 3em 3em;
-  }
-
-  #scroller nav {
-    right: 64px;
-  }
   h1 {
     font-size: 5em;
   }
   p {
     font-size: 1.25em;
   }
-  .content {
-    margin-right: 100px;
-  }
-
 
   #section1 {
     h1 {
@@ -313,6 +325,13 @@ a {
       margin-top: -1em;
       font-size: 1.5em;
     }
+    .social {
+      display: block;
+    }
+    .socialIcon {
+      width: 48px;
+      display: inline-block;
+    }
   }
   #section2 {
     .gallery {
@@ -320,7 +339,9 @@ a {
     }
   }
   #section3 {
-
+    h1 {
+      font-size: 6em;
+    }
   }
 
 }

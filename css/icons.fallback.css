@@ -1,50 +1,55 @@
 
 .icon-github:hover{
-	background-image: url('png/github-active.png');
-	background-repeat: no-repeat;
+	opacity:1;
 }
 
 .icon-github {
-	background-image: url('png/github.png');
+	background-image: url('img/github.png');
 	background-repeat: no-repeat;
+	opacity:.75;
+	transition: opacity .1s ease-in-out;
 }
 
 .icon-instagram:hover{
-	background-image: url('png/instagram-active.png');
-	background-repeat: no-repeat;
+	opacity:1;
 }
 
 .icon-instagram {
-	background-image: url('png/instagram.png');
+	background-image: url('img/instagram.png');
 	background-repeat: no-repeat;
+	opacity:.75;
+	transition: opacity .1s ease-in-out;
 }
 
 .icon-linkedin:hover{
-	background-image: url('png/linkedin-active.png');
-	background-repeat: no-repeat;
+	opacity:1;
 }
 
 .icon-linkedin {
-	background-image: url('png/linkedin.png');
+	background-image: url('img/linkedin.png');
 	background-repeat: no-repeat;
+	opacity:.75;
+	transition: opacity .1s ease-in-out;
 }
 
 .icon-mail:hover{
-	background-image: url('png/mail-active.png');
-	background-repeat: no-repeat;
+	opacity:1;
 }
 
 .icon-mail {
-	background-image: url('png/mail.png');
+	background-image: url('img/mail.png');
 	background-repeat: no-repeat;
+	opacity:.75;
+	transition: opacity .1s ease-in-out;
 }
 
 .icon-twitter:hover{
-	background-image: url('png/twitter-active.png');
-	background-repeat: no-repeat;
+	opacity:1;
 }
 
 .icon-twitter {
-	background-image: url('png/twitter.png');
+	background-image: url('img/twitter.png');
 	background-repeat: no-repeat;
+	opacity:.75;
+	transition: opacity .1s ease-in-out;
 }

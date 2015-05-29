@@ -263,8 +263,8 @@ a:hover {
 }
 #section1 h1 {
   margin: 0 0 0 -3px;
-  font-size: 3.7em;
-  text-shadow: 1px 2px 4px rgba(34, 34, 34, 0.8);
+  color: #ccc;
+  text-shadow: 2px 2px 4px rgba(34, 34, 34, 0.8);
 }
 #section1 h2 {
   margin-top: -.7em;
@@ -273,11 +273,12 @@ a:hover {
 #section1 .social {
   margin-left: -1em;
   width: calc(100% + 1em);
+  display: table;
 }
 #section1 .socialIcon {
-  display: inline-block;
+  display: table-cell;
   height: 48px;
-  width: 24.1%;
+  width: 20%;
   background-position: 50%;
   text-indent: -9999px;
 }
@@ -337,6 +338,25 @@ a:hover {
   opacity: 1;
 }
 
+#section3 {
+  color: #fff;
+  background: url("../img/bg-medallion.jpg") 0 0 no-repeat;
+}
+#section3:before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+}
+#section3 h1 {
+  color: #ccc;
+  text-shadow: 2px 2px 4px rgba(34, 34, 34, 0.8);
+}
+
 #heyitsthem {
   background: url("../img/heyitsthem-sm.jpg") center center no-repeat;
   height: 100%;
@@ -373,22 +393,9 @@ a:hover {
   background-size: contain;
 }
 
-#section3 {
-  color: #fff;
-  background: url("../img/bg-medallion.jpg") 0 0 no-repeat;
-}
-#section3:before {
-  content: '';
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  top: 0;
-  left: 0;
-  position: absolute;
-  z-index: -1;
-}
-#section3 h1 {
-  color: #fff;
+.icon-github #github {
+  height: 48px;
+  width: 48px;
 }
 
 @media screen and (min-width: 321px) {
@@ -396,11 +403,48 @@ a:hover {
     min-height: 100%;
   }
 
+  #section2 .gallery {
+    height: 300px;
+  }
+
+  #heyitsthem {
+    background: url("../img/heyitsthem.jpg") center center no-repeat;
+    height: 100%;
+    background-size: contain;
+  }
+
+  #charitywarriors {
+    background: url("../img/charitywarriors.jpg") center center no-repeat;
+    height: 100%;
+    background-size: contain;
+  }
+
+  #mackenzie {
+    background: url("../img/mackenzie.jpg") center center no-repeat;
+    height: 100%;
+    background-size: contain;
+  }
+
+  #bk {
+    background: url("../img/bk.jpg") center center no-repeat;
+    height: 100%;
+    background-size: contain;
+  }
+}
+@media screen and (min-width: 569px) {
+  html, body, #scroller, section {
+    height: 100%;
+  }
+
+  #scroller section {
+    padding: 3em 0 3em 3em;
+  }
+
   #scroller nav {
     display: block;
     position: fixed;
     z-index: 9999;
-    right: 45px;
+    right: 64px;
     top: 50%;
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
@@ -448,52 +492,7 @@ a:hover {
   }
 
   .content {
-    margin-right: 60px;
-  }
-
-  #section1 .socialIcon {
-    width: 48px;
-  }
-
-  #section2 .gallery {
-    height: 300px;
-  }
-
-  #heyitsthem {
-    background: url("../img/heyitsthem.jpg") center center no-repeat;
-    height: 100%;
-    background-size: contain;
-  }
-
-  #charitywarriors {
-    background: url("../img/charitywarriors.jpg") center center no-repeat;
-    height: 100%;
-    background-size: contain;
-  }
-
-  #mackenzie {
-    background: url("../img/mackenzie.jpg") center center no-repeat;
-    height: 100%;
-    background-size: contain;
-  }
-
-  #bk {
-    background: url("../img/bk.jpg") center center no-repeat;
-    height: 100%;
-    background-size: contain;
-  }
-}
-@media screen and (min-width: 569px) {
-  html, body, #scroller, section {
-    height: 100%;
-  }
-
-  #scroller section {
-    padding: 3em 0 3em 3em;
-  }
-
-  #scroller nav {
-    right: 64px;
+    margin-right: 100px;
   }
 
   h1 {
@@ -504,10 +503,6 @@ a:hover {
     font-size: 1.25em;
   }
 
-  .content {
-    margin-right: 100px;
-  }
-
   #section1 h1 {
     font-size: 6em;
     margin-left: -4px;
@@ -516,8 +511,19 @@ a:hover {
     margin-top: -1em;
     font-size: 1.5em;
   }
+  #section1 .social {
+    display: block;
+  }
+  #section1 .socialIcon {
+    width: 48px;
+    display: inline-block;
+  }
 
   #section2 .gallery {
     height: 420px;
+  }
+
+  #section3 h1 {
+    font-size: 6em;
   }
 }
