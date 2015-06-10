@@ -348,3 +348,10 @@ a {
   }
 
 }
+
+@media screen and (min-width: 1024px){
+  .content {
+    margin: 0 auto;
+    max-width: 60em;
+  }
+}
